@@ -2,7 +2,7 @@
 
   #define configs_h
 
-  #define POLISH_POTATO
+   #define POLISH_POTATO
 
   //Indicates that it must redirect the stream with the captured packets to serial (1)
   //If not defined, will write packages to SD card if supported
@@ -15,6 +15,7 @@
   //#define MARAUDER_V6
   //#define MARAUDER_KIT
   //#define GENERIC_ESP32
+  //#define GENERIC_ESP32_S2_MARAUDER_FLIPPER
   #define MARAUDER_FLIPPER
   //#define ESP32_LDDB
   //#define MARAUDER_DEV_BOARD_PRO
@@ -24,6 +25,9 @@
   #define MARAUDER_VERSION "v0.12.1"
 
  //// BOARD FEATURES
+  #ifdef GENERIC_ESP32_S2_MARAUDER_FLIPPER
+      #define MARAUDER_FLIPPER
+  #endif
   #ifdef MARAUDER_M5STICKC
     //#define FLIPPER_ZERO_HAT
     #define HAS_BATTERY
@@ -114,7 +118,9 @@
     //#define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     //#define HAS_SCREEN
-    #define HAS_GPS
+    #ifndef GENERIC_ESP32_S2_MARAUDER_FLIPPER
+      #define HAS_GPS
+    #endif
     #ifndef WRITE_PACKETS_SERIAL
       #define HAS_SD
       #define USE_SD
@@ -643,7 +649,11 @@
     #endif
 
     #ifdef MARAUDER_FLIPPER
-      #define SD_CS 10
+      #ifdef LILYGO_ESP32_S2
+        #define SD_CS 3
+      #else
+        #define SD_CS 10
+      #endif
     #endif
 
     #ifdef ESP32_LDDB
