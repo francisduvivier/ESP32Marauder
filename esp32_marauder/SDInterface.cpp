@@ -47,7 +47,6 @@ bool SDInterface::initSD() {
       return false;
     }
     else {
-      Serial.println(F("SD Card Mounted Succesfully!"));
       this->supported = true;
       this->cardType = SD.cardType();
       if (cardType == CARD_MMC)
