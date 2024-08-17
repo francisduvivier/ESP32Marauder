@@ -957,31 +957,7 @@
   //// END NEOPIXEL STUFF
 
   //// EVIL PORTAL STUFF
-  #ifdef MARAUDER_M5STICKC
-    #define MAX_HTML_SIZE 11400
-  #elif defined(MARAUDER_MINI)
-    #define MAX_HTML_SIZE 11400
-  #elif defined(MARAUDER_REV_FEATHER)
-    #define MAX_HTML_SIZE 11400
-  #elif defined(MARAUDER_V4)
-    #define MAX_HTML_SIZE 11400
-  #elif defined(MARAUDER_V6) || defined(MARAUDER_V6_1)
-    #define MAX_HTML_SIZE 11400
-  #elif defined(MARAUDER_KIT)
-    #define MAX_HTML_SIZE 11400
-  #elif defined(GENERIC_ESP32)
-    #define MAX_HTML_SIZE 20000
-  #elif defined(MARAUDER_FLIPPER)
-    #define MAX_HTML_SIZE 20000
-  #elif defined(ESP32_LDDB)
-    #define MAX_HTML_SIZE 20000
-  #elif defined(MARAUDER_DEV_BOARD_PRO)
-    #define MAX_HTML_SIZE 20000
-  #elif defined(XIAO_ESP32_S3)
-    #define MAX_HTML_SIZE 20000
-  #else
-    #define MAX_HTML_SIZE 20000
-  #endif
+   #define MAX_HTML_SIZE 20000
   //// END EVIL PORTAL STUFF
 
   //// GPS STUFF
