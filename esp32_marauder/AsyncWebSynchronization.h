@@ -3,7 +3,7 @@
 
 // Synchronisation is only available on ESP32, as the ESP8266 isn't using FreeRTOS by default
 
-#include <ESPAsyncWebServer.h>
+#include "ESPAsyncWebServer.h"
 
 #ifdef ESP32
 
@@ -98,7 +98,7 @@ public:
   }
 };
 
-// Same for AsyncPlainLock, for ESP8266 this is just the unimplemented version above. 
+// Same for AsyncPlainLock, for ESP8266 this is just the unimplemented version above.
 using AsyncPlainLock = AsyncWebLock;
 
 #endif

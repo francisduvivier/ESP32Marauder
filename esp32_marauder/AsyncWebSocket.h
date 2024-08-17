@@ -33,7 +33,7 @@
 #define WS_MAX_QUEUED_MESSAGES 8
 #endif
 #endif
-#include <ESPAsyncWebServer.h>
+#include "ESPAsyncWebServer.h"
 
 #include "AsyncWebSynchronization.h"
 
@@ -167,20 +167,20 @@ class AsyncWebSocketClient {
 
     //  - If "true" (default), the connection will be closed if the message queue is full.
     // This is the default behavior in yubox-node-org, which is not silently discarding messages but instead closes the connection.
-    // The big issue with this behavior is  that is can cause the UI to automatically re-create a new WS connection, which can be filled again, 
+    // The big issue with this behavior is  that is can cause the UI to automatically re-create a new WS connection, which can be filled again,
     // and so on, causing a resource exhaustion.
-    // 
+    //
     // - If "false", the incoming message will be discarded if the queue is full.
     // This is the default behavior in the original ESPAsyncWebServer library from me-no-dev.
     // This behavior allows the best performance at the expense of unreliable message delivery in case the queue is full (some messages may be lost).
-    // 
+    //
     // - In any case, when the queue is full, a message is logged.
     // - IT is recommended to use the methods queueIsFull(), availableForWriteAll(), availableForWrite(clientId) to check if the queue is full before sending a message.
-    // 
+    //
     // Usage:
     //  - can be set in the onEvent listener when connecting (event type is: WS_EVT_CONNECT)
-    // 
-    // Use cases:, 
+    //
+    // Use cases:,
     // - if using websocket to send logging messages, maybe some loss is acceptable.
     // - But if using websocket to send UI update messages, maybe the connection should be closed and the UI redrawn.
     void setCloseClientOnQueueFull(bool close) { closeWhenFull = close; }
@@ -219,7 +219,7 @@ class AsyncWebSocketClient {
     void text(const char *message);
     void text(const String &message);
     void text(const __FlashStringHelper *message);
-    void text(AsyncWebSocketMessageBuffer *buffer); 
+    void text(AsyncWebSocketMessageBuffer *buffer);
 
     void binary(std::shared_ptr<std::vector<uint8_t>> buffer);
     void binary(const uint8_t *message, size_t len);
@@ -227,7 +227,7 @@ class AsyncWebSocketClient {
     void binary(const char * message);
     void binary(const String &message);
     void binary(const __FlashStringHelper *message, size_t len);
-    void binary(AsyncWebSocketMessageBuffer *buffer); 
+    void binary(AsyncWebSocketMessageBuffer *buffer);
 
     bool canSend() const;
 
@@ -320,9 +320,9 @@ class AsyncWebSocket: public AsyncWebHandler {
 
     // Handshake Handler
     void handleHandshake(AwsHandshakeHandler handler){
-      _handshakeHandler = handler; 
+      _handshakeHandler = handler;
     }
-	
+
     //system callbacks (do not call)
     uint32_t _getNextId(){ return _cNextId++; }
     AsyncWebSocketClient *_newClient(AsyncWebServerRequest *request);
@@ -331,9 +331,9 @@ class AsyncWebSocket: public AsyncWebHandler {
     virtual void handleRequest(AsyncWebServerRequest *request) override final;
 
 
-    //  messagebuffer functions/objects. 
-    AsyncWebSocketMessageBuffer * makeBuffer(size_t size = 0); 
-    AsyncWebSocketMessageBuffer * makeBuffer(uint8_t * data, size_t size); 
+    //  messagebuffer functions/objects.
+    AsyncWebSocketMessageBuffer * makeBuffer(size_t size = 0);
+    AsyncWebSocketMessageBuffer * makeBuffer(uint8_t * data, size_t size);
 
     const std::list<AsyncWebSocketClient> &getClients() const { return _clients; }
 };
