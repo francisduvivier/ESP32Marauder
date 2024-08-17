@@ -14,7 +14,12 @@
   //#define MARAUDER_V6_1
   //#define MARAUDER_KIT
   //#define GENERIC_ESP32
-  #define MARAUDER_FLIPPER
+  //#define MARAUDER_FLIPPER
+  #ifdef X_FRI3D_BADGE_2024
+    #define FRI3D_BADGE
+  #else
+    #define LILYGO_T8_ESP32S2
+  #endif
   //#define ESP32_LDDB
   //#define MARAUDER_DEV_BOARD_PRO
   //#define XIAO_ESP32_S3
@@ -40,6 +45,10 @@
     #define HARDWARE_NAME "Marauder Kit"
   #elif defined(MARAUDER_FLIPPER)
     #define HARDWARE_NAME "Flipper Zero Dev Board"
+  #elif defined(LILYGO_T8_ESP32S2)
+    #define HARDWARE_NAME "TTGO T8 v1.1 with SD"
+  #elif defined(FRI3D_BADGE)
+    #define HARDWARE_NAME "Fri3d Badge"
   #elif defined(ESP32_LDDB)
     #define HARDWARE_NAME "ESP32 LDDB"
   #elif defined(MARAUDER_DEV_BOARD_PRO)
@@ -157,6 +166,34 @@
     //#define HAS_BT
     //#define HAS_BUTTONS
     //#define HAS_NEOPIXEL_LED
+    //#define HAS_PWR_MGMT
+    //#define HAS_SCREEN
+    #define HAS_GPS
+    #define HAS_SD
+    #define USE_SD
+    //#define HAS_TEMP_SENSOR
+  #endif
+
+  #ifdef LILYGO_T8_ESP32S2
+    //#define FLIPPER_ZERO_HAT
+    //#define HAS_BATTERY
+    //#define HAS_BT
+    //#define HAS_BUTTONS
+    //#define HAS_NEOPIXEL_LED
+    //#define HAS_PWR_MGMT
+    //#define HAS_SCREEN
+    // #define HAS_GPS
+    #define HAS_SD
+    #define USE_SD
+    //#define HAS_TEMP_SENSOR
+  #endif
+
+  #ifdef FRI3D_BADGGE
+    //#define FLIPPER_ZERO_HAT
+    //#define HAS_BATTERY
+    //#define HAS_BT
+    //#define HAS_BUTTONS
+    #define HAS_NEOPIXEL_LED
     //#define HAS_PWR_MGMT
     //#define HAS_SCREEN
     // #define HAS_GPS
@@ -848,7 +885,11 @@
     #endif
 
     #ifdef MARAUDER_FLIPPER
-      #define SD_CS 10 // todo
+      #define SD_CS 10
+    #endif
+
+    #ifdef LILYGO_T8_ESP32S2
+      #define SD_CS SS
     #endif
 
     #ifdef ESP32_LDDB
@@ -893,35 +934,11 @@
   //// END SCREEN STUFF
 
   //// MEMORY LOWER LIMIT STUFF
-  // These values are in bytes
-  #ifdef MARAUDER_M5STICKC
-    #define MEM_LOWER_LIM 20000
-  #elif defined(MARAUDER_MINI)
-    #define MEM_LOWER_LIM 20000
-  #elif defined(MARAUDER_REV_FEATHER)
-    #define MEM_LOWER_LIM 20000
-  #elif defined(MARAUDER_V4)
-    #define MEM_LOWER_LIM 20000
-  #elif defined(MARAUDER_V6) || defined(MARAUDER_V6_1)
-    #define MEM_LOWER_LIM 20000
-  #elif defined(MARAUDER_KIT)
-    #define MEM_LOWER_LIM 20000
-  #elif defined(GENERIC_ESP32)
-    #define MEM_LOWER_LIM 20000
-  #elif defined(MARAUDER_FLIPPER)
-    #define MEM_LOWER_LIM 20000
-  #elif defined(ESP32_LDDB)
-    #define MEM_LOWER_LIM 20000
-  #elif defined(MARAUDER_DEV_BOARD_PRO)
-    #define MEM_LOWER_LIM 20000
-  #elif defined(XIAO_ESP32_S3)
-    #define MEM_LOWER_LIM 20000
-  #endif
+  #define MEM_LOWER_LIM 20000
   //// END MEMORY LOWER LIMIT STUFF
 
   //// NEOPIXEL STUFF
   #ifdef HAS_NEOPIXEL_LED
-
     #if defined(ESP32_LDDB)
       #define PIN 17
     #elif defined(MARAUDER_DEV_BOARD_PRO)
@@ -929,7 +946,11 @@
     #elif defined(MARAUDER_REV_FEATHER)
       #define PIN 33
     #else
-      #define PIN 25
+      #ifdef PIN_WS2812
+        #define PIN PIN_WS2812
+      #else
+        #define PIN 25
+      #endif
     #endif
 
   #endif
