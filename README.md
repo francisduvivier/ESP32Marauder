@@ -5,7 +5,8 @@ Instructions for using this are below
 More info about this project can be found at the [wifi marauder wiki](https://github.com/justcallmekoko/ESP32Marauder/wiki)
 
 ## Connection diagram
-![wiring_esp32_flipper](https://github.com/user-attachments/assets/b7ffa744-1517-4aab-9e16-84682b148319)
+<img width="514" alt="wiring_diagram" src="https://github.com/user-attachments/assets/2874adcb-a04a-425d-b31f-82fac62428e9">
+
 
 ## Connection pictures
 ### Proto board top
