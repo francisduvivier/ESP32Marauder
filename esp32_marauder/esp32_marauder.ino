@@ -152,6 +152,7 @@ void backlightOff() {
 void setup()
 {
  #ifdef LILYGO_T8_ESP32S2
+    delay(1000);
     Serial.begin(115200, SERIAL_8N1, 18, 17);
  #else
     Serial.begin(115200);
