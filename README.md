@@ -1,7 +1,6 @@
 <!---[![License: MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/justcallmekoko/ESP32Marauder/blob/master/LICENSE)--->
 # DIY Wifi Addon Module for Flipper Zero Instructions
-Instructions for using this are below
-## More info
+## Credits and More Info
 More info about this project can be found at the [wifi marauder wiki](https://github.com/justcallmekoko/ESP32Marauder/wiki)
 
 ## Connection diagram
