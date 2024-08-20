@@ -10,12 +10,11 @@ More info about this project can be found at the [wifi marauder wiki](https://gi
 2. Micro SD Card - **FAT-32 formatted** 
 3. 10+8 Square Pin Headers (Come with your Lilygo T8 ESP32-S2)
 4. 10x24 Protoboard
-5. 2x20 [round female headers](Round hole pins and headers: https://www.aliexpress.com/item/4001122376295.html?spm=a2g0o.order_lit.order_list_main.64.65f01802Tb9q0K,https://www.aliexpress.com/item/4001122376295.html?spm=a2g0o.order_list.order_list_main.65.65f01802Tb9q0K 
-LILYGO® T8 ESP32-S2 V1.1 Wifi Draadloze Module Type-C Connector Tf Card Slot Development Board Micropython Arduino Compatibel)
+5. 2x20 [round female headers](https://www.aliexpress.com/item/4001122376295.html)
+
 6. [Lilygo T8 ESP32-S2](https://www.lilygo.cc/products/esp32-s2)
 
-7. 2x20 [round male pin headers](Round hole pins and headers: https://www.aliexpress.com/item/4001122376295.html?spm=a2g0o.order_list.order_list_main.64.65f01802Tb9q0K,https://www.aliexpress.com/item/4001122376295.html?spm=a2g0o.order_list.order_list_main.65.65f01802Tb9q0K 
-LILYGO® T8 ESP32-S2 V1.1 Wifi Draadloze Module Type-C Connector Tf Card Slot Development Board Micropython Arduino Compatibel)
+7. 2x20 [round male pin headers](https://www.aliexpress.com/item/4001122376295.html)
 
 ## Wiring and Soldering
 
