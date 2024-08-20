@@ -37,11 +37,14 @@ After soldering (or before) you should install the forked marauder firmware on y
 * go to https://esp.huhn.me/ and 
 * Connect Device
 * Select the latest [esp32_marauder.ino.bootloader.bin](https://github.com/ko-lab/ESP32Marauder_ESP32_S2_DIY/releases/latest/download/esp32_marauder.ino.bootloader.bin) file at 0x1000.
+* Select the latest [esp32_marauder.ino.partitions.bin](https://github.com/ko-lab/ESP32Marauder_ESP32_S2_DIY/releases/latest/download/esp32_marauder.ino.partitions.bin) file at 0x8000.
 * Select the lateast [esp32_marauder.ino.bin](https://github.com/ko-lab/ESP32Marauder_ESP32_S2_DIY/releases/latest/download/esp32_marauder.ino.bin) file at 0x10000.
 * Note: some people had to flash 2 times before it worked.
-* 
+
+
 #### esp web flasher correct settings:
-<img width="700" alt="Screenshot 2024-08-17 at 20 33 16" src="https://github.com/user-attachments/assets/65a3c6d0-a2c9-4339-b5a8-8e1155bd8270">
+<img width="586" alt="esp-web-flasher-settings-screenshot" src="https://github.com/user-attachments/assets/4a5b0e71-7a89-4c6c-8d36-b31c951d55db">
+
 
 
 ### Installing the Marauder app
@@ -52,7 +55,7 @@ Then to use it follow these steps.
 
 * start the Wifi Marauder app
  * if the power wiring is correct, then you will see a blue and red light on the esp32. 
-* ** Press the reset button on the esp32s2 now **
+* **Press the reset button on the LILIGY T8 now**
 * then try `scan [ap]` for example, it should start printing ssid's
 
 ### Using the SD Card
